@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './forms.component.html',
   styleUrls: ['./forms.component.css']
 })
+
 export class FormsComponent {
   residents!: number; // quantity of residents
 
@@ -25,7 +26,7 @@ export class FormsComponent {
   errorMessage!: string;
 
   averageWatts: any = { //watts
-    'room': 60, // 60W per lightbulb
+    'room': 10, // 10W per lightbulb
     'washingMachine': 1500, //500W - 2500W
     'dryer': 3000, //1000W - 5000W
     'pc': 300, //each pc 100W - 500W (desktop)
