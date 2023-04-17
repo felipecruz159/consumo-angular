@@ -1,0 +1,105 @@
+.block{
+    position: relative;
+    margin: 2rem auto;
+    width: 80vw;
+    background-color: #0e0f0f;
+    border-radius: 1rem;
+}
+
+@media screen and (min-width: 576px) {
+    .block{
+        margin: 3rem auto;
+    }
+}
+
+.glow::before, .glow::after{
+    content: '';
+    border-radius: .5rem;
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, yellow, #FFE169, #B69121, #FAD643, #A47E1B, #EDC531, #926C15, #DBB42C, #805B10, #C9A227, #6E4C0D);
+    background-size: 400%;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    z-index: -1;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        background-position: 0 0;
+    }
+
+    50%{
+        background-position: 300% 0;
+    }
+    
+    100%{
+        background-position: 0 0;
+    }
+}
+
+.glow::after{
+    filter: blur(40px);
+    opacity: 0.25;
+}
+
+.title{
+    color: #222;
+    position: relative;
+}
+
+.title::before{
+    content: attr(data-text);
+    position: absolute;
+    color: #fff;
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: title 4s linear infinite;
+    filter: drop-shadow(0 0 5px #fff) drop-shadow(0 0 30px yellow);
+}
+
+@keyframes title {
+    0%, 10%, 100%{
+        width: 0;
+    }
+    50%, 70%{
+        width: 100%;
+    }
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: yellow;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 4px yellow;
+}
+
+label{
+    margin-top: .5rem;
+}
+
+option{
+    color: black;
+}
+
+h6{
+    font-size: 8pt;
+}
+
+button{
+    background-color: black;
+    border: none;
+    padding: .5rem;
+    width: 120px;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    transition: ease-in-out .2s;
+}
+
+button:hover{
+    background-color: yellow;
+    color: black;
+    transition: ease-in-out .2s;
+}
+
